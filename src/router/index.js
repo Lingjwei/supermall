@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import HomeComponents from '../components/HomeComponents.vue'
+
+
+const Home = () => import('views/home/Home')
+const Category = () => import('views/category/Category')
+const Cart = () => import('views/cart/Cart')
+const Profile = () => import('views/profile/Profile')
+const Detail = () => import('views/detail/Detail')
 
 Vue.use(VueRouter)
 
@@ -15,52 +20,42 @@ Vue.use(VueRouter)
         title:'首页'
     }
   },
+
   {
     path: '/home',
-    name: 'Home',
     component: Home,
     meta: {
       title:'首页'
-    },
-    //子路由设置
-    // children: [
-    //   {
-    //     path: 'news',
-    //     component: () => import(/* webpackChunkName: "about" */ '../components/HomeNaws.vue')
-    //   },
-    //   {
-    //     path: 'message',
-    //     component: () => import(/* webpackChunkName: "about" */ '../components/HomeMessage.vue')
-    //   }
-    // ]
+    }
   },
   {
-    path: '/about',
-    name: 'About',
-      //标题
+    path: '/category',
+    component: Category,
     meta: {
-      title:'关于'
-    },
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    //加载的模板地址
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-    {
-      path: '/category',
-      name: 'Category',
-      //标题
-      meta: {
-        title:'购物车'
-      },
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      //加载的模板地址
-      component: () => import(/* webpackChunkName: "about" */ '../views/Category.vue')
+      title:'分类'
     }
-  
+  },
+  {
+    path: '/cart',
+    component: Cart,
+    meta: {
+      title:'购物车'
+    }
+  },
+  {
+    path: '/profile',
+    component: Profile,
+    meta: {
+      title:'我的'
+    }
+  },
+  {
+    path: '/detail',
+    component: Detail,
+    meta: {
+      title:'商品详情'
+    }
+  }
 ]
 
 const router = new VueRouter({
