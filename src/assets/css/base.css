@@ -2,7 +2,7 @@
 
 :root {
   --color-text: #666;
-  --color-high-text: #ff5777;
+  --color-high-text: #f19cad;
   --color-tint: #ff8198;
   --color-background: #fff;
   --font-size: 14px;
@@ -15,13 +15,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  touch-action: pan-y;
 }
 
 body {
-  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  /*font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;*/
+  font-family: "helvetica neue",tahoma,"hiragino sans gb",stheiti,"wenquanyi micro hei","\5FAE\8F6F\96C5\9ED1,\5B8B\4F53",sans-serif!important;
   user-select: none; /* 禁止用户鼠标在页面上选中文字/图片等 */
   -webkit-tap-highlight-color: transparent; /* webkit是苹果浏览器引擎，tap点击，highlight背景高亮，color颜色，颜色用数值调节 */
-  background: var(--color-background);
+  /*background: var(--color-background);*/
+  background: #f9f9f9;
   color: var(--color-text);
   /* rem vw/vh */
   width: 100vw;
@@ -54,3 +57,15 @@ a {
   float: right;
 }
 
+input::-webkit-input-placeholder { /* WebKit browsers 适配谷歌 */
+  color: #cbcdd6;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 适配火狐 */
+  color: #cbcdd6;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ 适配火狐 */
+  color: #cbcdd6;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+  适配ie*/
+  color: #cbcdd6;
+}

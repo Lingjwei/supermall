@@ -1,32 +1,26 @@
 <template>
   <div class="shop-info">
     <div class="shop-top">
-      <img :src="shop.logo">
-      <span class="title">{{shop.name}}</span>
+
+      <img v-if="shop.shop_log" :src="shop.shop_log">
+      <img v-else src="~assets/img/public/shop_log.jpg" >
+
+      <span class="title">{{shop.shop_name}}</span>
     </div>
     <div class="shop-middle">
       <div class="shop-middle-item shop-middle-left">
         <div class="info-sells">
           <div class="sells-count">
-            {{shop.sells | sellCountFilter}}
+            {{shop.sales_count | sellCountFilter}}
           </div>
           <div class="sells-text">总销量</div>
         </div>
         <div class="info-goods">
           <div class="goods-count">
-            {{shop.goodsCount}}
+            {{shop.goods_count}}
           </div>
           <div class="goods-text">全部宝贝</div>
         </div>
-      </div>
-      <div class="shop-middle-item shop-middle-right">
-        <table>
-          <tr v-for="(item, index) in shop.score" :key="index">
-            <td>{{item.name}}</td>
-            <td class="score" :class="{'score-better': item.isBetter}">{{item.score}}</td>
-            <td class="better" :class="{'better-more': item.isBetter}"><span>{{item.isBetter ? '高':'低'}}</span></td>
-          </tr>
-        </table>
       </div>
     </div>
     <div class="shop-bottom">
@@ -36,11 +30,11 @@
 </template>
 
 <script>
-	export default {
-		name: "DetailShopInfo",
+  export default {
+    name: "DetailShopInfo",
     props: {
-		  shop: {
-		    type: Object
+      shop: {
+        type: Object
       }
     },
     filters: {
@@ -49,7 +43,7 @@
         return (value/10000).toFixed(1) + '万'
       }
     }
-	}
+  }
 </script>
 
 <style scoped>

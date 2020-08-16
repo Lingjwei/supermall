@@ -20,8 +20,8 @@
       }
     },
     data() {
-    	return {
-    		isLoaded: false
+      return {
+        isLoaded: false
       }
     },
     components: {
@@ -30,17 +30,17 @@
     },
     methods: {
       startTimer() {
-	      this.$refs.swiper && this.$refs.swiper.startTimer()
+        this.$refs.swiper && this.$refs.swiper.startTimer()
       },
       stopTimer() {
         this.$refs.swiper && this.$refs.swiper.stopTimer()
       },
-	    imageLoaded() {
-      	if (!this.isLoaded) {
-      		this.$emit('swiperLoaded')
+      imageLoaded() {
+        if (!this.isLoaded) {
+          this.$emit('swiperLoaded')
           this.isLoaded = true
         }
-	    }
+      }
     }
   }
 </script>

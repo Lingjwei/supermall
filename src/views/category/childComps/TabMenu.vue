@@ -6,14 +6,14 @@
            v-for="(item, index) in categories"
            :key="index"
            @click="itemClick(index)">
-        {{item.title}}
+        {{item.cat_name}}
       </div>
     </div>
   </scroll>
 </template>
 
 <script>
-  import Scroll from 'components/common/scroll/Scroll'
+  import Scroll from 'components/common/betterScroll/Scroll'
 
 	export default {
 		name: "TabMenu",

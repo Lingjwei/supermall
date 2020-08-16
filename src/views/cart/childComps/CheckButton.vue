@@ -1,8 +1,8 @@
 <template>
     <div>
-      <div class="icon-selector" :class="{'selector-active': checked}" @click="selectItem">
+      <span class="icon-selector" :class="{'selector-active': checked}" @click="selectItem">
         <img src="~/assets/img/cart/tick.svg" alt="">
-      </div>
+      </span>
     </div>
 </template>
 
@@ -12,7 +12,7 @@
     props: {
 		  value: {
 		    type: Boolean,
-        default: true
+        default: false
       }
     },
     data: function () {
@@ -40,8 +40,15 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    border: 2px solid #ccc;
+    border: 2px solid #ff8198;
     cursor: pointer;
+    background: #ffffff;
+  }
+  .icon-selector img{
+    vertical-align: middle;
+    margin-top: -0.1rem;
+    width: 4.5vw;
+    height: 4.5vw;
   }
 
   .selector-active {
